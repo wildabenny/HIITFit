@@ -2,14 +2,14 @@
 import SwiftUI
 
 struct HeaderView: View {
-    let excerciseName: String
+    let titleText: String
     
     var body: some View {
         VStack {
-            Text(excerciseName)
+            Text(titleText)
                 .font(.largeTitle)
             HStack {
-                Image(systemName: "1.circle")
+                Image(systemName: "hand.wave")
                 Image(systemName: "2.circle")
                 Image(systemName: "3.circle")
                 Image(systemName: "4.circle")
@@ -21,9 +21,9 @@ struct HeaderView: View {
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HeaderView(excerciseName: "Squat")
+            HeaderView(titleText: "Squat")
                 .previewLayout(.sizeThatFits)
-            HeaderView(excerciseName: "Squat")
+            HeaderView(titleText: "Squat")
                 .preferredColorScheme(.dark)
                 .environment(\.sizeCategory, .accessibilityLarge)
                 .previewLayout(.sizeThatFits)

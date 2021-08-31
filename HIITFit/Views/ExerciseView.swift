@@ -11,7 +11,7 @@ struct ExerciseView: View {
   var body: some View {
     GeometryReader { geometry in
         VStack {
-            HeaderView(excerciseName: exerciseNames[index])
+            HeaderView(titleText: exerciseNames[index])
                 .padding(.bottom)
             if let url = Bundle.main.url(
                 forResource: videoNames[index], withExtension: "mp4") {
