@@ -2,6 +2,10 @@
 import SwiftUI
 
 struct SuccessView: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    @Binding var selectedTab: Int
+    
     let message = """
         Good job completing all four excercises
         Remember tommorow's another day
@@ -23,7 +27,10 @@ struct SuccessView: View {
             }
             VStack {
                 Spacer()
-                Button("Continue") {}
+                Button("Continue") {
+                    presentationMode.wrappedValue.dismiss()
+                    selectedTab = 9
+                }
                     .padding(.bottom)
             }
         }
@@ -32,6 +39,6 @@ struct SuccessView: View {
 
 struct SuccessView_Previews: PreviewProvider {
     static var previews: some View {
-        SuccessView()
+        SuccessView(selectedTab: .constant(3))
     }
 }
